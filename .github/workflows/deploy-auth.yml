@@ -18,3 +18,9 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: cd auth && docker build -t aramhovhannisyna/auth .
       - run: docker push aramhovhannisyna/auth
+
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: doctl kubernetis cluster kubekonfig save ticketing
+      - run: kubectl rollout restart deployment auth-depl
