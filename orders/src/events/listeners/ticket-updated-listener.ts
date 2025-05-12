@@ -17,7 +17,6 @@ export class TicketUpdatedListener extends Listener<TicketUpdatedEvent> {
 
 
     await ticket.save();
-    console.log('Ticket updated:', ticket._id);
 
     msg.ack();
   }
