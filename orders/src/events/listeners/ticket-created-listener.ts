@@ -15,8 +15,6 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
     });
     await ticket.save();
 
-    console.log('Ticket created:', ticket._id);
-
     msg.ack();
   }
 }
