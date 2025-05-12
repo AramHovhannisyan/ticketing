@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd auth && docker build -t aramhovhannisyna/auth .
-      - run: docker login -u $DOCKER_USERNAME -p DOCKER_POASSWORD
+      - run: docker login -u $DOCKER_USERNAME -p DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_POASSWORD: ${{ secrets.DOCKER_PASSWORD }}
